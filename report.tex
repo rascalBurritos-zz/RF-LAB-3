@@ -1,0 +1,144 @@
+\RequirePackage[OT1]{fontenc} 
+\documentclass[journal]{IEEEtran}
+
+% *** CITATION PACKAGES ***
+\usepackage[style=ieee]{biblatex} 
+\bibliography{example_bib.bib}    %your file created using JabRef
+
+% *** MATH PACKAGES ***
+\usepackage{amsmath}
+
+% Table Packages
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+\usepackage{url}
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage{graphicx}  %needed to include png, eps figures
+\graphicspath{{./images/}}
+\usepackage{float}  % used to fix location of images i.e.\begin{figure}[H]
+
+\begin{document}
+
+% paper title
+\newcommand{\LabNumber}{\#3}
+\newcommand{\LabTitle}{Vector Impedance Measurements 2}
+
+\title{RF Lab Module \LabNumber\ --- \LabTitle}
+%\\ \small{Title of the session (you can be creative highlighting your findings)}}
+
+% author names 
+\author{Stephen Campbell
+    % Student 2 First Name Last Name 
+}% <-this % stops a space
+
+% The report headers
+\markboth{EE/CE 4202 Electrical and Computer Engineering Laboratory in Circuits. Lab \LabNumber, \today}%do not delete next lines
+{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+\begin{abstract}
+    In this lab, familiarity with the nanoVNA was gained. Further experience with
+    the Agilent vector network analyzer was acquired while several components were
+    measured and characterized across a broad frequency range. Specifically, a 50 Ohm
+    Load, an antenna, and an attenuator examined.
+\end{abstract}
+
+\section{Introduction}
+
+\IEEEPARstart{T}{his} lab required expertise regarding the operation of the
+nanoVNA handheld vector network analyzer. The nanoSaver software was used to
+save touchstone files (s1p, s2p) so that the measurements could be plotted on a
+host computer. After the Agilent VNA and nanoVNA were SOLT calibrated, each
+test component was physically connected, examined, measured, and analyzed.
+
+\section{Analysis}
+The S-parameters of the devices are plotted with and without calibration on the nanoVNA and Agilent VNA.
+
+
+
+\begin{figure}[hp]
+    \centering
+    \includegraphics[width=0.3\textwidth]{./3db_agilent_smith_chart.png}
+    \caption{\label{fig:3db_agilent} \(S_{1,1} \)of 3dB attenuator measured on the Agilent VNA}
+\end{figure}
+
+\begin{figure}[hp]
+    \centering
+    \includegraphics[width=0.3\textwidth]{./3db_nano_smith_chart.png}
+    \caption{\label{fig:3db_nano} \(S_{1,1}\) of 3dB attenuator measured on the nanoVNA}
+\end{figure}
+\begin{figure}[hp]
+    \centering
+    \includegraphics[width=0.3\textwidth]{./antenna_agilent_smith_chart.png}
+    \caption{\label{fig:attenna_agilent} \(S_{1,1}\) of antenna measured on the Agilent VNA}
+\end{figure}
+
+\begin{figure}[hp]
+    \centering
+    \includegraphics[width=0.3\textwidth]{./antenna_agilent_rfplot.png}
+    \caption{\label{fig:attenna_agilent_rfplot} \(S_{1,1}\) of antenna measured on the Agilent VNA over frequency}
+\end{figure}
+
+\begin{figure}[hp]
+    \centering
+    \includegraphics[width=0.3\textwidth]{./load_agilent_smith_chart.png}
+    \caption{\label{fig:load_agilent} \(S_{1,1}\) of 50 \(\Omega \) measured on the Agilent VNA}
+\end{figure}
+\begin{figure}[hp]
+    \centering
+    \includegraphics[width=0.3\textwidth]{./3db_agilent_smith_chart.png}
+    \caption{\label{fig:load_nano} \(S_{1,1}\) of 50 \(\Omega \) measured on the nanoVNA}
+\end{figure}
+
+\textbf{Compare results between Agilent VNA and NanoVNA}
+
+The Agilent VNA and the NanoVNA had both had accurate results. In some
+measurements such as the load measurements, the Agilent was more precise and in
+some measurements such as the attenuator measurement the nanoVNA was more
+precise. This observation does not take into account the different frequency
+ranges that the Agilent and nanoVNA performed. Regardless of this note, the Agilent
+and nanoVNA show measurements which correspond to the theoretical values.
+
+
+\section{Discussion and Summary}
+
+\subsection{Questions to Consider}
+\textbf{Make some comments about the difference in calibrating the two VNAs and
+    using them for measurements. Accuracy to your knowledge, ease of use, etc.}
+
+\begin{itemize}
+    \item \textbf{Calibration}
+
+          The calibration of both instruments is straightforward and relatively easy
+          to perform. One note is that the nanoVNA does not require the SOL on the
+          second port which reduces the time required to calibrate it.
+
+    \item \textbf{Accuracy and Capabilities}
+
+          To my knowledge, the Agilent is not only more accurate than the
+          nanoVNA, but it is also capable of performing accurate vector
+          impedance measurements at a higher frequency.
+
+    \item \textbf{Ease of Use}
+
+          Because of the Agilent VNA is significantly heavier and larger than the
+          nanoVNA, general handling of the nanoVNA is generally preferred. As far
+          as interface easy of use, if both devices were connected and controlled
+          by a laptop,  there would not be a major distinction; however, because
+          the Agilent requires a flash drive to more files the nanoVNA becomes
+          considerably easier to use.
+
+\end{itemize}
+
+% \appendices
+% \section{Pre-Lab}
+% \section{Extra Photos}
+
+\end{document}
